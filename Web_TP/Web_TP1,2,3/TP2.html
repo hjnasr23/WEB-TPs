@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire d'Inscription</title>
+</head>
+<body>
+
+    <h1>Formulaire d'Inscription Complet</h1>
+
+    <form method="get" enctype="multipart/form-data">
+        
+        <fieldset>
+            <legend>Informations Personnelles</legend>
+            
+            <p>
+                <label for="nom">Nom :</label><br>
+                <input type="text" id="nom" required autocomplete="family-name">
+            </p>
+
+            <p>
+                <label for="prenom">Prénom :</label><br>
+                <input type="text" id="prenom" required autocomplete="given-name">
+            </p>
+
+            <p>
+                <label for="email">Email :</label><br>
+                <input type="email" id="email" required autocomplete="email">
+            </p>
+
+            <p>
+                <label for="tel">Téléphone (Format FR : 0611223344) :</label><br>
+                <input type="tel" id="tel" pattern="0[1-9][0-9]{8}" required placeholder="06XXXXXXXX">
+            </p>
+
+            <p>
+                <label for="naissance">Date de naissance (Âge min 18 ans) :</label><br>
+                <input type="date" id="naissance" max="2008-12-31" required>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Sécurité du compte</legend>
+            <p>
+                <label for="pass">Mot de passe (8 carac min, 1 Maj, 1 Chiffre) :</label><br>
+                <input type="password" id="pass" 
+                       pattern="(?=.*\d)(?=.*[A-Z]).{8,}" 
+                       title="Le mot de passe doit contenir au moins 8 caractères, une majuscule et un chiffre"
+                       required>
+            </p>
+            <p>
+                <label for="confirm">Confirmer le mot de passe :</label><br>
+                <input type="password" id="confirm" required>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Détails du profil</legend>
+            
+            <p>
+                <label for="pays">Sélection du pays :</label><br>
+                <input list="countries" id="pays" required>
+                <datalist id="countries">
+                    <option value="Maroc">
+                    <option value="France">
+                    <option value="Canada">
+                    <option value="algeria">
+                    <option value="tunisia">
+                    <option value="senegal">
+
+                    </option>
+                </datalist>
+            </p>
+
+            <p>
+                <label>Genre :</label><br>
+                <input type="radio" id="homme" value="H" required> 
+                <label for="homme">Homme</label>
+                <input type="radio" id="femme" value="F"> 
+                <label for="femme">Femme</label>
+            </p>
+
+            <p>
+                <label>Centres d'intérêt :</label><br>
+                <input type="checkbox" id="cyber" > <label for="cyber">Cybersécurité</label><br>
+                <input type="checkbox" id="web" > <label for="web">Développement Web</label><br>
+                <input type="checkbox" id="pilot" > <label for="pilot">Aéronautique</label>
+            </p>
+
+            <p>
+                <label for="bio">Biographie (Max 200 caractères) :</label><br>
+                <textarea id="bio" maxlength="200" rows="5" cols="40"></textarea>
+            </p>
+
+            <p>
+                <label for="photo">Photo de profil :</label><br>
+                <input type="file" id="photo" accept="image/*">
+            </p>
+        </fieldset>
+
+        <p>
+            <input type="checkbox" id="cgu" required>
+            <label for="cgu">J'accepte les conditions générales d'utilisation (CGU)</label>
+        </p>
+
+        <p>
+            <button type="submit">S'inscrire</button>
+            <button type="reset">Réinitialiser</button>
+        </p>
+
+    </form>
+
+</body>
+</html>
