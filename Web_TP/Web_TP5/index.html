@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client HTTP Minimaliste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="row">
+        <select id="method">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="PATCH">PATCH</option>
+            <option value="DELETE">DELETE</option>
+        </select>
+        <input type="text" id="url" placeholder="URL" value="https://jsonplaceholder.typicode.com/todos/1">
+        <button id="send-btn">Envoyer</button>
+    </div>
+
+    <div id="headers-container">
+        <div class="header-row">
+            <input type="text" class="header-key" placeholder="Header key">
+            <input type="text" class="header-value" placeholder="Header value">
+            <button class="add-btn" id="add-header-btn" title="Ajouter un en-tête">+</button>
+        </div>
+    </div>
+
+    <div class="box-container">
+        <label class="box-label">Body</label>
+        <textarea id="request-body" placeholder="Entrez le corps de la requête (JSON, texte...)"></textarea>
+    </div>
+
+    <hr>
+
+    <div class="box-container" id="response-container">
+        <label class="box-label">Response</label>
+        <div id="response-meta">Statut de la requête apparaîtra ici...</div>
+        <pre id="response-body">Response body</pre>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
